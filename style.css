@@ -1,0 +1,967 @@
+@font-face {
+    font-family: cera pro;
+    src: url(CeraPro-Regular.ttf);
+}
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: cera pro;
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+::-webkit-scrollbar {width: 5px; height: 0px;}
+::-webkit-scrollbar-track {background: white; }
+::-webkit-scrollbar-thumb {background: gray;}
+::-webkit-scrollbar-thumb:hover {background: #3d3d3d;}
+
+.fb {background-image: url("ic-fb.png");}
+.yt {background-image: url("ic-yt.png");}
+.ln {background-image: url("ic-in.png");}
+.gm {background-image: url("ic-gm.png");}
+
+.fb, .yt, .ln, .gm {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1441px) {
+    .hid-on-pc {
+        display: none;
+    }
+    .navigation {
+        width: 100%;
+        height: 150px;
+        transition: 0.2s;
+
+        z-index: 1;
+        position: fixed;
+        top: 5%;
+    }
+    .navbar {
+        width: 80%;
+        height: 148px;
+        background: #d6d6d6;
+        border-radius: 10px;
+        box-shadow: 0px 15px 15px 0px #5f5f5f15;
+
+        margin: auto;
+        padding: 1.5%;
+
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+    }
+    .navbar span {
+        margin: 1%;
+        font-size: 20px;
+        transition: 0.4s;
+        color: gray;
+    }
+    .navbar span:hover {
+        color: black;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    .navcon {
+        width: 90%;
+        text-align: right;
+    }
+
+    .logo {
+        background: #2c2c2c;
+        border-radius: 100px;
+        height: 90px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+    }
+    .logo span {
+        margin: auto;
+        padding: 10px;
+        color: white;
+        font-size: 16px;
+    }
+
+    /* ========== Carousel Cover =========*/
+    .slideshow {
+        width: 100%;
+        height: 1000px;
+        margin: 0px;
+    }
+    .slide-text {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: gray;
+    }
+    .slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background: #c2c2c2;
+    }
+    /* ========== General Container =========*/
+    .gencontainer {
+        width: 100%;
+        height: auto;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .gentitle {
+        text-align: center;
+        color: gray;
+        font-size: 30px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-transform: uppercase;  
+    }
+    .gencontent {
+        font-size: 16px;
+        color: gray;
+        margin: auto;
+        margin-bottom: 5%;
+        width: 50%;
+        text-align: center;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #c2c2c2;
+        width: 60%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+      }
+
+    /* ========== Footer =========*/
+
+    .social-media {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+
+        margin: auto;
+        width: 20%;
+    }
+
+    footer {
+        text-align: center;
+        background: #3f3f3f;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: #c2c2c2;
+    }
+    .iconf {
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+        margin: auto;
+        padding: 2%;
+        color: #2c2c2c;
+        text-align: center;
+    }
+    .ftitle, .ftext {
+        margin: 2%;
+    }
+    .ftitle {
+        font-size: 30px;
+    } 
+    .ftext {
+        color: #6d6d6d;
+    }
+
+    /* ========== BREAD CRUMBS =========*/
+    .bread {
+        width: 0%;
+        background-color: white;
+        transition: 0.3s;
+        visibility: hidden;
+        margin: auto;
+        box-shadow: 0px 15px 15px 0px #5f5f5f15;
+    }
+    .breadcrumbcon {
+        width: 90%;
+        height: auto;
+        overflow-x: auto;
+        margin: auto;
+        padding: 8px;
+        color: #b3b3b3;
+        }
+        .con {
+        display: inline-flex;
+        }
+        .breadcrumbcon .crumb {
+        display: inline;
+        font-size: 12px;
+        color: #b3b3b3;
+        white-space: nowrap;
+        }
+        .breadcrumbcon .crumb+.crumb:before {
+        padding: 5px;
+        color: #b3b3b3;
+        content: "/\00a0";
+        }
+        .breadcrumbcon .crumb a {
+        color: #b3b3b3;
+        text-decoration: none;
+        }
+
+    /* ========== Cards =========*/
+    .cardcon {
+        width: 100%;
+        padding: 5%;
+
+        display: flex;
+        align-items: center;
+    }
+    .cardtitle {
+        font-size: 25px;
+        color: gray;
+        margin: auto;
+        margin-top: 5%;
+        width: 80%;
+        height: 30px;
+    }
+    .card {
+        color: #6d6d6d;
+        width: 20%;
+        height: 550px;
+        margin: auto;
+        border-radius: 15px;
+
+        box-shadow: 0px 15px 15px 0px #3a3a3a15;
+    }
+    .cardtext {
+        padding: 8%;
+    }
+    .cardimg {
+        background: #ebebeb;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 15px 15px 0 0;
+    }
+    .cardimg span {
+        margin: auto;
+    }
+    button, input[type="button"] {
+        border: 1px solid #2c2c2c;
+        background: transparent;
+        outline-width: 0;
+        cursor: pointer;
+        border-radius: 100px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        color: #2c2c2c;
+        transition: 0.3s;
+    }
+    button:hover, input[type="button"]:hover {
+        background: #2c2c2c;
+        color: white;
+        transition: 0.3s;
+    }
+    .cardfunc {
+        text-align: center;
+    }
+    /*======== triple description ============*/
+    .tri_con {
+        background-color: white;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tri_card {
+        width: 20%;
+        height: 550px;
+        margin: 3%;
+    }
+    .tri_img {
+       background: #e7e7e7;
+       height: 250px;
+       width: 65%;
+       color: gray;
+       border-radius: 200px;
+       margin: auto;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .tri_title {
+        font-size: 25px;
+        color: #363636;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .tri_txt {
+        padding: 1%;
+        padding-top: 5%;
+        font-size: 20px;
+        text-align: center;
+        color: #535353;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .hid-on-pc {
+        display: none;
+    }
+    .navigation {
+        width: 100%;
+        height: 150px;
+        transition: 0.2s;
+
+        z-index: 1; 
+        position: fixed;
+        top: 5%;
+    }
+    .navbar {
+        width: 80%;
+        height: 148px;
+        background: #d6d6d6;
+        border-radius: 10px;
+        box-shadow: 0px 15px 15px 0px #5f5f5f15;
+
+        margin: auto;
+        padding: 1.5%;
+
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+    }
+    .navbar span {
+        margin: 1%;
+        font-size: 20px;
+        transition: 0.4s;
+        color: gray;
+    }
+    .navbar span:hover {
+        color: black;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    .navcon {
+        width: 90%;
+        text-align: right;
+    }
+
+    .logo {
+        background: #2c2c2c;
+        border-radius: 100px;
+        height: 90px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+    }
+    .logo span {
+        margin: auto;
+        padding: 10px;
+        color: white;
+        font-size: 16px;
+    }
+
+    /* ========== Carousel Cover =========*/
+    .slideshow {
+        width: 100%;
+        height: 100vh;
+        margin: 0px;
+    }
+    .slide-text {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: gray;
+    }
+    .slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background: #c2c2c2;
+    }
+    /* ========== General Container =========*/
+    .gencontainer {
+        width: 100%;
+        height: auto;
+        padding-left: 10%;
+        padding-right: 10%;
+        position: relative;
+    }
+    .gentitle {
+        text-align: center;
+        color: gray;
+        font-size: 30px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-transform: uppercase;  
+    }
+    .gencontent {
+        font-size: 16px;
+        color: gray;
+        margin: auto;
+        margin-bottom: 5%;
+        width: 70%;
+        text-align: center;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #c2c2c2;
+        width: 60%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+      }
+
+    /* ========== Footer =========*/
+
+    .social-media {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+
+        margin: auto;
+        width: 20%;
+    }
+
+    footer {
+        text-align: center;
+        background: #3f3f3f;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        color: #c2c2c2;
+    }
+    .iconf {
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+        margin: auto;
+        padding: 2%;
+        color: #2c2c2c;
+        text-align: center;
+    }
+    .ftitle, .ftext {
+        margin: 2%;
+    }
+    .ftitle {
+        font-size: 30px;
+    } 
+    .ftext {
+        color: #6d6d6d;
+    }
+
+    /* ========== BREAD CRUMBS =========*/
+    .bread {
+        width: 0%;
+        background-color: white;
+        transition: 0.3s;
+        visibility: hidden;
+        margin: auto;
+        box-shadow: 0px 15px 15px 0px #5f5f5f15;
+    }
+    .breadcrumbcon {
+        width: 90%;
+        height: auto;
+        overflow-x: auto;
+        margin: auto;
+        padding: 8px;
+        color: #b3b3b3;
+        }
+        .con {
+        display: inline-flex;
+        }
+        .breadcrumbcon .crumb {
+        display: inline;
+        font-size: 12px;
+        color: #b3b3b3;
+        white-space: nowrap;
+        }
+        .breadcrumbcon .crumb+.crumb:before {
+        padding: 5px;
+        color: #b3b3b3;
+        content: "/\00a0";
+        }
+        .breadcrumbcon .crumb a {
+        color: #b3b3b3;
+        text-decoration: none;
+        }
+
+    /* ========== Cards =========*/
+    .cardcon {
+        width: 100%;
+        padding: 5%;
+
+        display: flex;
+        align-items: center;
+    }
+    .cardtitle {
+        font-size: 25px;
+        color: gray;
+        margin: auto;
+        margin-top: 5%;
+        width: 80%;
+        height: 30px;
+    }
+    .card {
+        color: #6d6d6d;
+        width: 25%;
+        height: 550px;
+        margin: auto;
+        border-radius: 15px;
+        box-shadow: 0px 15px 15px 0px #3a3a3a15;
+    }
+    .cardtext {
+        padding: 8%;
+    }
+    .cardimg {
+        background: #ebebeb;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 15px 15px 0 0;
+    }
+    .cardimg span {
+        margin: auto;
+    }
+    button, input[type="button"] {
+        border: 1px solid #2c2c2c;
+        background: transparent;
+        outline-width: 0;
+        cursor: pointer;
+        border-radius: 100px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        color: #2c2c2c;
+        transition: 0.3s;
+    }
+    button:hover, input[type="button"]:hover {
+        background: #2c2c2c;
+        color: white;
+        transition: 0.3s;
+    }
+    .cardfunc {
+        text-align: center;
+    }
+    /*======== triple description ============*/
+    .tri_con {
+        background-color: white;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tri_card {
+        width: 20%;
+        height: 400px;
+        margin: 3%;
+    }
+    .tri_img {
+       background: #e7e7e7;
+       height: 150px;
+       width: 150px;
+       color: gray;
+       border-radius: 200px;
+       margin: auto;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .tri_title {
+        font-size: 20px;
+        color: #363636;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .tri_txt {
+        padding: 1%;
+        padding-top: 5%;
+        font-size: 18px;
+        text-align: center;
+        color: #535353;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    .hid-on-mob {
+        display: none;
+    }
+
+    .navigation {
+        width: 100%;
+
+        z-index: 1;
+        position: fixed;
+        top: 0;
+    }
+    .navbar {
+        width: 100%;
+        height: 60px;
+        background: #d6d6d6;
+
+        margin: auto;
+        padding: 1.5%;
+
+        display: flex;
+        align-items: center;
+    }
+    .navcon {
+        width: 90%;
+        text-align: right;
+    }
+    .floatr {
+        border-radius: 5px;
+        float: right;
+        transition: 0.4s;
+    }
+    .floatr:hover {
+        filter: brightness(90%);
+        background: #353535;
+        transition: 0.4s;
+    }
+    .navcon .bars {
+        width: 30px;
+        height: 3px;
+        margin: 7px;
+        background: white;
+        transition: 0.4s;
+    }
+    .logo {
+        background: #2c2c2c;
+        border-radius: 100px;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .logo span {
+        margin: auto;
+        padding: 10px;
+        color: white;
+        font-size: 10px;
+    }
+    .sidebar {
+        width: 80%;
+        height: 100%;
+        background: gray;
+        z-index: 1;
+        
+        position: fixed;
+        top: 0;
+        transition: 0.5s;
+    }
+    .profile {
+        width: 100%;
+        height: 30%;
+        background: #3535355b;
+        padding-top: 15%;
+        color: white;
+
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+    .side-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #2c2c2c;
+        border-radius: 100px;
+
+        margin: auto;
+        margin-bottom: 10px;
+        padding: 1%;
+
+        display: flex;
+        align-items: center;
+    }
+    .side-logo span {
+        margin: auto;
+        padding: 1%;
+    }
+    .sidenav {
+        width: 100%;
+        height: 60%;
+        overflow: hidden;
+    }
+    .navs {
+        width: 100%;
+        height: 60px;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .navs:hover, .collapsible:hover, .colnav:hover {
+        background: #00000062;
+    }
+    .navs a {
+        align-self: center;
+        color: white;
+        text-decoration: none;
+        white-space: nowrap; 
+    }
+
+    .collapsible {
+        width: 100%;
+        height: 60px;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #3535355b;
+    }
+    .colnav {
+        width: 100%;
+        height: 60px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .colnav a {
+        text-decoration: none;
+        color: white;
+        margin: auto;
+        margin-left: 45px;
+    }
+    .social-media {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+    .icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+
+        margin: auto;
+        padding: 3%;
+        color: white;
+
+        text-align: center;
+    }
+
+    /* ========== BREAD CRUMBS =========*/
+    .bread {
+        width: 100%;
+        background-color: white
+    }
+    .breadcrumbcon {
+        width: 90%;
+        height: auto;
+        overflow-x: auto;
+        margin: auto;
+        padding: 8px;
+        color: #b3b3b3;
+      }
+      .con {
+        display: inline-flex;
+      }
+      .breadcrumbcon .crumb {
+        display: inline;
+        font-size: 12px;
+        color: #b3b3b3;
+        white-space: nowrap;
+      }
+      .breadcrumbcon .crumb+.crumb:before {
+        padding: 5px;
+        color: #b3b3b3;
+        content: "/\00a0";
+      }
+      .breadcrumbcon .crumb a {
+        color: #b3b3b3;
+        text-decoration: none;
+      }
+
+    /* ========== Carousel Cover =========*/
+    .slideshow {
+        width: 100%;
+        height: 640px;
+        margin: 0px;
+    }
+    .slide-text {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: gray;
+    }
+    .slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background: #c2c2c2;
+    }
+    /* ========== General Container =========*/
+    .gencontainer {
+        width: 100%;
+        height: auto;
+        padding: 10%;
+    }
+    .gentitle {
+        text-align: center;
+        color: gray;
+        font-size: 30px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        text-transform: uppercase;
+    }
+    .gencontent {
+        font-size: 16px;
+        color: gray;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #c2c2c2;
+        width: 60%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+      }
+
+    /* ========== Footer =========*/
+
+    footer {
+        text-align: center;
+        background: #3f3f3f;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        color: #c2c2c2;
+    }
+    .iconf {
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+        margin: auto;
+        padding: 3%;
+        color: #2c2c2c;
+        text-align: center;
+    }
+    .ftitle, .ftext {
+        margin: 5%;
+    }
+    .ftext {
+        color: #6d6d6d;
+    }
+    /* ========== Cards =========*/
+    .cardcon {
+        width: 100%;
+        height: auto;
+        padding: 5%;
+
+        display: block;
+    }
+    .cardtitle {
+        font-size: 25px;
+        color: gray;
+        margin: auto;
+        margin-top: 5%;
+        width: 80%;
+        height: 30px;
+    }
+    .card {
+        color: #6d6d6d;
+        width: 90%;
+        height: 600px;
+        margin: auto;
+        margin-bottom: 20%;
+        border-radius: 15px;
+
+        box-shadow: 0px 15px 15px 0px #5f5f5f15;
+    }
+    .cardtext {
+        padding: 8%;
+    }
+    .cardimg {
+        background: #ebebeb;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-radius: 15px 15px 0 0;
+    }
+    .cardimg span {
+        margin: auto;
+    }
+    button, input[type="button"] {
+        border: 1px solid #2c2c2c;
+        background: transparent;
+        outline-width: 0;
+        cursor: pointer;
+        border-radius: 100px;
+        height: 40px;
+        width: 140px;
+        font-size: 16px;
+        color: #2c2c2c;
+        transition: 0.3s;
+        margin-top: 10%;
+    }
+    button:hover, input[type="button"] {
+        background: #2c2c2c;
+        color: white;
+        transition: 0.3s;
+    }
+    .cardfunc {
+        text-align: center;
+    }
+    /*======== triple description ============*/
+    .tri_con {
+        background-color: white;
+        margin: auto;
+        width: 100%;
+        display: inline-block;
+        padding-top: 10%;
+    }
+    .tri_card {
+        width: 90%;
+        height: 500px;
+        margin: auto;
+    }
+    .tri_img {
+    background: #e7e7e7;
+    height: 240px;
+    width: 65%;
+    color: gray;
+    border-radius: 200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .tri_title {
+        font-size: 25px;
+        color: #363636;
+        text-align: center;
+        padding-top: 5%;
+    }
+    .tri_txt {
+        padding: 1%;
+        padding-top: 5%;
+        font-size: 20px;
+        text-align: center;
+        color: #535353;
+    }
+}
+
